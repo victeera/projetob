@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    @include('head')
-   <title>Cadastro</title>
+   <title>Vendas</title>
 
         <div class="container-fluid bg">
 

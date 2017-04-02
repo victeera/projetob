@@ -26,4 +26,10 @@ class MenuController extends Controller
         Auth::logout();
         return redirect()->route('login'); // testa ai fez na certa?
     }
+    public function venda()
+    {
+        $user = Auth::user();
+        return view('venda')->with('users', $user);
+
+    }
 }

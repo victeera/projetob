@@ -20,4 +20,4 @@ Route::get('sair','MenuController@sair');
 Route::post('auth','LoginController@autentication'); //
 Route::get('menu','MenuController@menu')->middleware('auth')->name('menu');
 Route::get('cadastro','MenuController@cadastro')->middleware('auth');
-Route::get('vendas','LoginController@autentication')->middleware('auth');
+Route::get('venda','MenuController@venda')->middleware('auth');

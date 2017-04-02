@@ -43,7 +43,7 @@ width: 30%;
 .tipo1{
 text-align: center;
 font-family: 'Exo 2', sans-serif;
-font-size: 120px;
+font-size: 109px;
 }
 
 .tipo2{
