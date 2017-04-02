@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('login','LoginController@login')->middleware('auth');
+Route::get('login','LoginController@login');
 Route::post('menu','LoginController@autentication');
 Route::get('menu','MenuController@menu');
 Route::get('cadastro','MenuController@cadastro');

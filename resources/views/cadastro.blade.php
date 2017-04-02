@@ -5,9 +5,8 @@
 
         <div class="container-fluid bg">
 
-                <p class="tipo2">Operador: {{ $users->name }}</p>
+                <p class="tipo2">Operador: {{ $users->name or " " }}</p>
                 <p class=" tipo3">Cadastro de Produto</p>
-
 
                 <form class="text-left" action="{{url("menu")}}" method="post">
                    {{ csrf_field() }}
