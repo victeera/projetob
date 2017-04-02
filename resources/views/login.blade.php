@@ -15,7 +15,7 @@
     <br><br>
     <br><br>
 
-        <div class="container">
+        <div class="container-fluid">
                 @if(Session::has("msgerro"))
 
                             <div class="alert alert-danger">

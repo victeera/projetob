@@ -6,15 +6,15 @@
  <style>
 
 body{
-background-color: #101010;
+    background:darkred !important;
+    color: white !important;
 }
  .bg{
  background-color: darkred;
  color: #ffffff;
- width: 90%;
-text-align: center;
-margin-top: 20px;
-height: 100%;
+ width: 100%;
+ text-align: center;
+ height: 100%;
 }
 img{
 width: 30%;
@@ -37,7 +37,6 @@ width: 30%;
     footer{
     font-size: 15px;
     text-align: center;
-    margin-top: 25px;
 
     }
 
