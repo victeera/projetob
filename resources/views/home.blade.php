@@ -5,7 +5,6 @@
 <title>Menu</title>
 
        <div class="container-fluid bg">
-
         <p class="tipo2">Operador: {{ $users->name }}</p>
         <p class=" tipo1"> Rabelo's Bar</p>
 

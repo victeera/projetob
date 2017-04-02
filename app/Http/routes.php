@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('login','LoginController@login');
 Route::post('menu','LoginController@autentication');
 Route::get('menu','MenuController@menu');
