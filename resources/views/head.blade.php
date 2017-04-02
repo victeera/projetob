@@ -80,7 +80,7 @@ font-size: 40px;
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{url("/menu")}}">Rabelo's</a>
+      <a class="navbar-brand" href="{{url('menu')}}">Rabelo's</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -88,10 +88,10 @@ font-size: 40px;
       <ul class="nav navbar-nav">
         <li><a href={{ url('cadastro') }}>Cadastrar Produto<span class="sr-only">(current)</span></a></li>
         <li><a href="{{ url('venda') }}">Venda</a></li>
-        <li><a href="{{ url("relatorio") }}">Relatório</a></li>
+        <li><a href="{{ url('relatorio') }}">Relatório</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"> Sair</a></li>
+        <li><a href="{{ url('sair') }}"> Sair</a></li>
 
       </ul>
     </div><!-- /.navbar-collapse -->

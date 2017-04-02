@@ -15,8 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login','LoginController@login');
-Route::post('menu','LoginController@autentication');
-Route::get('menu','MenuController@menu');
-Route::get('cadastro','MenuController@cadastro');
-Route::get('vendas','LoginController@autentication');
+Route::get('login','LoginController@login')->name('login');
+Route::get('sair','MenuController@sair');
+Route::post('auth','LoginController@autentication'); //
+Route::get('menu','MenuController@menu')->middleware('auth')->name('menu');
+Route::get('cadastro','MenuController@cadastro')->middleware('auth');
+Route::get('vendas','LoginController@autentication')->middleware('auth');

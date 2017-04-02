@@ -19,11 +19,11 @@ class LoginController extends Controller
     {
         if (Auth::attempt(['email' => $request->get("email"), 'password' => $request->get('password')])) {
             $user = Auth::user();
-            return view('home')->with('users', $user);
+            return redirect()->route('menu')->with('users', $user);
 	     } else{
 	    	   $msgerro = "Digite um email ou senha validos";
             return back()
                 ->with('msgerro', $msgerro);
         }
-    }
+    } // pode mudaar ela pra auth
 }

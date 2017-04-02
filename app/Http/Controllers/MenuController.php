@@ -21,4 +21,9 @@ class MenuController extends Controller
         return view('home')->with('users', $user);
 
     }
+
+    public function sair(){
+        Auth::logout();
+        return redirect()->route('login'); // testa ai fez na certa?
+    }
 }

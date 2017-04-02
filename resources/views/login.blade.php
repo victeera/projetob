@@ -23,7 +23,7 @@
                                    <strong>Erro!</strong>  {{ Session::get('msgerro')}}
                                </div>
                            @endif
-                <form class="text-left" action="{{url("menu")}}" method="post">
+                <form class="text-left" action="{{url("auth")}}" method="post">
                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="exampleInputEmail1">E-mail</label>
