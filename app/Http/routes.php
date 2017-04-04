@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Route::get('login','LoginController@login')->name('login');
 Route::get('sair','MenuController@sair');
-Route::post('auth','LoginController@autentication'); //
-Route::get('menu','MenuController@menu')->middleware('auth')->name('menu');
-Route::get('cadastro','MenuController@cadastro')->middleware('auth');
-Route::get('venda','MenuController@venda')->middleware('auth');
+Route::post('auth','LoginController@autentication');
+Route::get('menu','MenuController@menuview')->middleware('auth')->name('menu');
+Route::get('cadastro','MenuController@cadastroview')->middleware('auth')->name('cadastro');
+Route::get('venda','MenuController@vendaview')->middleware('auth');
+Route::get('relatorio','MenuController@relatorioview')->middleware('auth');
+Route::post('vcadastro','CadastroController@vcadastro')->middleware('auth');

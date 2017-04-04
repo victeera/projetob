@@ -57,6 +57,12 @@ font-family: 'Exo 2', sans-serif;
 font-size: 40px;
 
 }
+.tipo4{
+ text-align: center;
+ font-family: 'Exo 2', sans-serif;
+ font-size: 80px;
+
+ }
 
 
 

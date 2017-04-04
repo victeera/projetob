@@ -8,23 +8,26 @@
                 <p class="tipo2">Operador: {{ $users->name or " " }}</p>
                 <p class=" tipo3">Cadastro de Produto</p>
 
-                <form class="text-left" action="{{url("menu")}}" method="post">
+@if(Session::has('msg'))
+{{ Session::get("msg") }}
+@endif
+                <form class="text-left" action="{{url("vcadastro")}}" method="post">
                    {{ csrf_field() }}
                     <div class="col-sm-5">
                     <div class="form-group">
-                        Nome do Produto <input type="text" name="name"  class="form-control"  placeholder="Ex: Skol">
+                        Nome do Produto <input type="text" name="name"  class="form-control"  placeholder="Ex: Skol" value="{{ old('name') }}">
                     </div>
                     <div class="form-group">
-                       Quantidade <input type="text" name="quantidade" class="form-control" placeholder="ex: 00">
+                       Quantidade em unidades <input type="text" name="quantidade" class="form-control" placeholder="ex: 00" value="{{ old('quantidade') }}">
                     </div>
                      <div class="form-group">
-                       Preço Unidade<input type="text" name="precount" class="form-control" placeholder="ex: R$ 00,00">
+                       Preço Unidade<input type="text" name="precount" class="form-control" placeholder="ex: R$ 00,00" value="{{ old('precount') }}">
                      </div>
                      <div class="form-group">
-                       Preço Balde<input type="text" name="precobalde" class="form-control" placeholder="ex: R$ 00,00">
+                       Preço Balde<input type="text" name="precobalde" class="form-control" placeholder="ex: R$ 00,00" value="{{ old('precobalde') }}">
                      </div>
                      <div class="form-group">
-                        Tipo <input type="text" name="tipo" class="form-control" placeholder="ex: Cerveja">
+                        Tipo <input type="text" name="tipo" class="form-control" placeholder="ex: Cerveja" value="{{ old('tipo') }}">
                      </div>
                      <div class="form-group">
                      <div class="col-md-offset-5">
