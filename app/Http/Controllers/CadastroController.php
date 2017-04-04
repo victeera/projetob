@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CadastroRequest;
 use App\Produtos;
 use Illuminate\Http\Request;
 
@@ -9,8 +10,9 @@ use App\Http\Requests;
 
 class CadastroController extends Controller
 {
-   public function vcadastro(Request $request){
-       if(isset($request)){
+   public function vcadastro(CadastroRequest $request){
+
+   	if(isset($request)){
         $produto = new Produtos();
         $produto->name = $request->name;
         $produto->quantidade = $request->quantidade;

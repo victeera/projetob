@@ -8,11 +8,23 @@
                 <p class="tipo2">Operador: {{ $users->name or " " }}</p>
                 <p class=" tipo3">Cadastro de Produto</p>
 
-@if(Session::has('msg'))
-{{ Session::get("msg") }}
-@endif
+                @if(Session::has('msg'))
+                {{ Session::get("msg") }}
+                @endif
+
                 <form class="text-left" action="{{url("vcadastro")}}" method="post">
-                   {{ csrf_field() }}
+                     @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    {{ csrf_field() }}
                     <div class="col-sm-5">
                     <div class="form-group">
                         Nome do Produto <input type="text" name="name"  class="form-control"  placeholder="Ex: Skol" value="{{ old('name') }}">
@@ -40,9 +52,11 @@
 </div>
         </div><br>
 
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <footer> <b>&copy; Victeera's Developer</b></footer>
     </body>
 </html>
+
