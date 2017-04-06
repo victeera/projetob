@@ -23,7 +23,7 @@ class LoginController extends Controller
         if(Auth::attempt($credenciais)){
             return redirect()->route('menu')->with('users', $user);
         }else{
-            $loginErro = 'Informe Um Email e Senha Validas';
+            $loginErro = 'Informe um E-mail e Senha validos';
             return back()
                 ->with('loginErro', $loginErro)
                 ->withInput();

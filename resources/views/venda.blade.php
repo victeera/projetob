@@ -21,48 +21,12 @@
 </select>
 <br>
 
-<select class="form-control" size="1" name="name">
+<div class="form-group">
+             <div class="col-sm-14">
+               <input type="text" class="form-control" name="quantidade" placeholder="Quantidade" value="{{ old('quantidade') }}">
+             </div>
+           </div>
 
-<option selected value="Selecione">Selecione</option>
-
-<option value="2000">2000</option>
-
-<option value="2001">2001</option>
-
-</select>
-<br>
-
-<select class="form-control" size="1" name="name">
-
-<option selected value="Selecione">Selecione</option>
-
-<option value="2000">2000</option>
-
-<option value="2001">2001</option>
-
-</select>
-<br>
-
-<select class="form-control" size="1" name="name">
-
-<option selected value="Selecione">Selecione</option>
-
-<option value="2000">2000</option>
-
-<option value="2001">2001</option>
-
-</select>
-<br>
-
-<select class="form-control" size="1" name="name">
-
-<option selected value="Selecione">Selecione</option>
-
-<option value="2000">2000</option>
-
-<option value="2001">2001</option>
-
-</select>
 <br>
                      <div class="form-group">
                      <div class="col-md-offset-5">

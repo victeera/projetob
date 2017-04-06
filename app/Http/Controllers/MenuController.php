@@ -25,11 +25,6 @@ class MenuController extends Controller
     public function vendaview()
     {
         $user = Auth::user();
-        $venda = Produtos::all();
-        $produto = count($venda);
-        if ($produto > 0) {
-            return view('venda')->with('vendas', $venda);
-        }
         return view('venda')->with('users', $user);
 
 
@@ -48,6 +43,10 @@ class MenuController extends Controller
 
     public function vendas()
     {
-
+        $venda = Produtos::all();
+        $produto = count($venda);
+        if ($produto > 0) {
+            return redirect()->route('venda')->with('vendas', $venda);
+        }
     }
 }
