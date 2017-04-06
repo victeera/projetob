@@ -96,7 +96,7 @@ font-size: 40px;
         <li><a href="{{ url('relatorio') }}">Relatório</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ url('sair') }}"> Sair</a></li>
+        <li><a href="{{ url('login') }}"> Sair</a></li>
 
       </ul>
     </div><!-- /.navbar-collapse -->

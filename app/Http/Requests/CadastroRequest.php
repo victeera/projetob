@@ -24,8 +24,8 @@ class CadastroRequest extends Request
     public function rules()
     {
         return [
-		     "name" => "required" ,
-			  "quantidade" => "required",
+		     "name" => "required",
+			  "quantidade" => "required","intenger",
 			  "precount" => "required",
 			  "precobalde" => "required",
 			  "tipo" => "required"
@@ -37,8 +37,9 @@ class CadastroRequest extends Request
 	    return [
 	    	'name.required' => "Nome do Produto, não pode está vazio",
 	    	'quantidade.required' => "Quatidade, não pode está vazio",
-	    	'precount.required' => " Preco quantidade, não pode está vazio",
-	    	'precobalde.required' => "Preco do Balde, não pode está vazio",
+	    	'quantidade.intenger' => "Digite uma quantidade válida",
+	    	'precount.required' => " Preço quantidade, não pode está vazio",
+	    	'precobalde.required' => "Preço do Balde, não pode está vazio",
 	    	'tipo.required' => "Tipo, não pode está vazio"
 
 	    ];

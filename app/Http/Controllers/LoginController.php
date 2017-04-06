@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,15 +16,17 @@ class LoginController extends Controller
     	   return view('login'); // so pra exibir a view login
     }
 
-    public function autentication(Request $request)
+    public function autentication(LoginRequest $loginResquet)
     {
-        if (Auth::attempt(['email' => $request->get("email"), 'password' => $request->get('password')])) {
-            $user = Auth::user();
+        $credenciais = ['email' => $loginResquet->get('email') , 'password' =>  $loginResquet->get('password')];
+        $user = Auth::user();
+        if(Auth::attempt($credenciais)){
             return redirect()->route('menu')->with('users', $user);
-	     } else{
-	    	   $msgerro = "Digite um email ou senha validos";
+        }else{
+            $loginErro = 'Informe Um Email e Senha Validas';
             return back()
-                ->with('msgerro', $msgerro);
+                ->with('loginErro', $loginErro)
+                ->withInput();
         }
-    } // pode mudaar ela pra auth
+    }
 }

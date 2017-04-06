@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Produtos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,7 +25,13 @@ class MenuController extends Controller
     public function vendaview()
     {
         $user = Auth::user();
+        $venda = Produtos::all();
+        $produto = count($venda);
+        if ($produto > 0) {
+            return view('venda')->with('vendas', $venda);
+        }
         return view('venda')->with('users', $user);
+
 
     }
     public function relatorioview()
@@ -36,7 +43,11 @@ class MenuController extends Controller
 
     public function sair(){
         Auth::logout();
-        return redirect()->route('login');
+        return view('login');
     }
 
+    public function vendas()
+    {
+
+    }
 }

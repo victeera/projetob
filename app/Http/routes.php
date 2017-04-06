@@ -11,12 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('login','LoginController@login')->name('login');
-Route::get('sair','MenuController@sair');
+
+Route::get('/','LoginController@login');
+Route::get('login','MenuController@sair');
 Route::post('auth','LoginController@autentication');
 Route::get('menu','MenuController@menuview')->middleware('auth')->name('menu');
 Route::get('cadastro','MenuController@cadastroview')->middleware('auth')->name('cadastro');

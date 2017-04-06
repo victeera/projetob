@@ -11,21 +11,59 @@
                 <form class="text-left" action="{{url("menu")}}" method="post">
                    {{ csrf_field() }}
                     <div class="col-sm-5">
-                    <div class="form-group">
-                       <input type="text" name="name"  class="form-control"  placeholder="Ex: Skol">
-                    </div>
-                    <div class="form-group">
-                       <input type="text" name="quantidade" class="form-control" placeholder="ex: 00">
-                    </div>
-                     <div class="form-group">
-                       <input type="text" name="precount" class="form-control" placeholder="ex: R$ 00,00">
-                     </div>
-                     <div class="form-group">
-                       <input type="text" name="precobalde" class="form-control" placeholder="ex: R$ 00,00">
-                     </div>
-                     <div class="form-group">
-                       <input type="text" name="tipo" class="form-control" placeholder="ex: Cerveja">
-                     </div>
+
+<select class="form-control" size="1" name="name">
+
+<option selected value="Selecione">Selecione o produto</option>
+@foreach($vendas as $venda)
+<option value="{{ $venda->name }}">{{ $venda->name }}</option>
+@endforeach
+</select>
+<br>
+
+<select class="form-control" size="1" name="name">
+
+<option selected value="Selecione">Selecione</option>
+
+<option value="2000">2000</option>
+
+<option value="2001">2001</option>
+
+</select>
+<br>
+
+<select class="form-control" size="1" name="name">
+
+<option selected value="Selecione">Selecione</option>
+
+<option value="2000">2000</option>
+
+<option value="2001">2001</option>
+
+</select>
+<br>
+
+<select class="form-control" size="1" name="name">
+
+<option selected value="Selecione">Selecione</option>
+
+<option value="2000">2000</option>
+
+<option value="2001">2001</option>
+
+</select>
+<br>
+
+<select class="form-control" size="1" name="name">
+
+<option selected value="Selecione">Selecione</option>
+
+<option value="2000">2000</option>
+
+<option value="2001">2001</option>
+
+</select>
+<br>
                      <div class="form-group">
                      <div class="col-md-offset-5">
                     <button type="submit" class="btn btn-primary">Finalizar</button><br>
