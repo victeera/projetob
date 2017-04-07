@@ -27,16 +27,16 @@
                     {{ csrf_field() }}
                     <div class="col-sm-5">
                     <div class="form-group">
-                        Nome do Produto <input type="text" name="name"  class="form-control"  placeholder="Ex: Skol" value="{{ old('name') }}">
+                        Nome do Produto <input type="text" name="name"  class="form-control"  placeholder="ex: Skol" value="{{ old('name') }}">
                     </div>
                     <div class="form-group">
                        Quantidade em unidades <input type="text" name="quantidade" class="form-control" placeholder="ex: 00" value="{{ old('quantidade') }}">
                     </div>
                      <div class="form-group">
-                       Preço Unidade<input type="text" name="precount" class="form-control" placeholder="ex: R$ 00,00" value="{{ old('precount') }}">
+                       Preço Unidade<input type="text" name="precount" class="form-control" placeholder="ex: 00,00" value="{{ old('precount') }}">
                      </div>
                      <div class="form-group">
-                       Preço Balde<input type="text" name="precobalde" class="form-control" placeholder="ex: R$ 00,00" value="{{ old('precobalde') }}">
+                       Preço Balde<input type="text" name="precobalde" class="form-control" placeholder="ex: 00,00" value="{{ old('precobalde') }}">
                      </div>
                      <div class="form-group">
                         Tipo <input type="text" name="tipo" class="form-control" placeholder="ex: Cerveja" value="{{ old('tipo') }}">

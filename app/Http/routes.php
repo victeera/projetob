@@ -21,4 +21,4 @@ Route::get('cadastro','MenuController@cadastroview')->middleware('auth')->name('
 Route::get('venda','MenuController@vendaview')->middleware('auth')->name('venda');
 Route::get('relatorio','MenuController@relatorioview')->middleware('auth');
 Route::post('vcadastro','CadastroController@vcadastro')->middleware('auth');
-Route::get('lista','MenuController@vendas')->middleware('auth');
+Route::get('venda','MenuController@vendas')->middleware('auth');

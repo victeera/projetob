@@ -24,23 +24,25 @@ class CadastroRequest extends Request
     public function rules()
     {
         return [
-		     "name" => "required",
-			  "quantidade" => "required","intenger",
-			  "precount" => "required",
-			  "precobalde" => "required",
-			  "tipo" => "required"
+		     "name" => 'required|max:100',
+			  "quantidade" => 'required|integer',
+			  "precount" => 'required',
+			  "precobalde" => 'required',
+			  "tipo" => 'required|max:100'
         ];
     }
 
     public function messages()
     {
 	    return [
-	    	'name.required' => "Nome do Produto, não pode está vazio",
-	    	'quantidade.required' => "Quatidade, não pode está vazio",
-	    	'quantidade.intenger' => "Digite uma quantidade válida",
-	    	'precount.required' => " Preço quantidade, não pode está vazio",
-	    	'precobalde.required' => "Preço do Balde, não pode está vazio",
-	    	'tipo.required' => "Tipo, não pode está vazio"
+	    	'name.required' => "Preencha o campo NOME",
+	    	'name.max' => "Você atingiu o limite de caracteres",
+	    	'quantidade.required' => "Preencha o campo QUANTIDADE",
+	    	'quantidade.integer' => "Digite um valor QUANTIDADE válido",
+	    	'precount.required' => " Preencha o campo PREÇO UNIDADE",
+	        'precobalde.required' => "Preencha o campo PREÇO BALDE",
+        	'tipo.required' => "Preencha o campo TIPO",
+	    	'tipo.max' => "Digite um valor TIPO válido",
 
 	    ];
     }

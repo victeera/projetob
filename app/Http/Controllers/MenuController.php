@@ -42,11 +42,10 @@ class MenuController extends Controller
     }
 
     public function vendas()
-    {
-        $venda = Produtos::all();
+    {   $venda = Produtos::all();
         $produto = count($venda);
         if ($produto > 0) {
-            return redirect()->route('venda')->with('vendas', $venda);
+            return view('venda')->with('vendas', $venda);
         }
     }
 }
