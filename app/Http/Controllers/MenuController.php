@@ -41,11 +41,4 @@ class MenuController extends Controller
         return view('login');
     }
 
-    public function vendas()
-    {   $venda = Produtos::all();
-        $produto = count($venda);
-        if ($produto > 0) {
-            return view('venda')->with('vendas', $venda);
-        }
-    }
 }

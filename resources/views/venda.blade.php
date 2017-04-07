@@ -4,10 +4,10 @@
    <title>Vendas</title>
 
         <div class="container-fluid bg">
-
-                <p class="tipo2">Operador: {{ $users->name or " " }}</p>
+                @if(Session::has('users'))
+                <p class="tipo2">Operador: {{ Session::get("users") }}</p>
                 <p class=" tipo4">Venda</p>
-
+@endif
                 <form class="text-left" action="{{url("menu")}}" method="post">
                    {{ csrf_field() }}
                     <div class="col-sm-5">
