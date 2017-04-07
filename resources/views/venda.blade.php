@@ -7,7 +7,7 @@
                 @if(Session::has('users'))
                 <p class="tipo2">Operador: {{ Session::get("users") }}</p>
                 <p class=" tipo4">Venda</p>
-@endif
+        @endif
                 <form class="text-left" action="{{url("menu")}}" method="post">
                    {{ csrf_field() }}
                     <div class="col-sm-5">
@@ -15,9 +15,9 @@
 <select class="form-control" size="1" name="name">
 
 <option selected value="Selecione">Selecione o produto</option>
-@foreach($vendas as $venda)
-<option value="{{ $venda->name }}">{{ $venda->name }}</option>
-@endforeach
+    @foreach($vendas as $venda)
+        <option value="{{ $venda->id }}"> {{ $venda->name }}</option>
+    @endforeach
 </select>
 <br>
 

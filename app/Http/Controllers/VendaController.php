@@ -11,10 +11,14 @@ class VendaController extends Controller
 {
 
     public function vendas()
-    {   $venda = Produtos::all();
-        $produto = count($venda);
+    {
+    	  $vendas = Produtos::all();
+    	  $produto = count($vendas);
         if ($produto > 0) {
-            return redirect()->route('venda')->with('vendas', $venda);
+        	   return view('venda' , compact('vendas'));
+        }else{
+        	  $msg = "Nao existe produtos cadastrados";
+	        return view('venda' , compact('msg'));
         }
     }
 }
