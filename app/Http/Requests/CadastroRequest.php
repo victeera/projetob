@@ -26,8 +26,8 @@ class CadastroRequest extends Request
         return [
 		     "name" => 'required|max:100',
 			  "quantidade" => 'required|integer',
-			  "precount" => 'required',
-			  "precobalde" => 'required',
+			  "precount" => 'required|regex:/^\d{1,}[.,]\d{1,}$/',
+			  "precobalde" => 'required|regex:/^\d{1,}[.,]\d{1,}$/',
 			  "tipo" => 'required|max:100'
         ];
     }
@@ -39,9 +39,11 @@ class CadastroRequest extends Request
 	    	'name.max' => "Você atingiu o limite de caracteres",
 	    	'quantidade.required' => "Preencha o campo QUANTIDADE",
 	    	'quantidade.integer' => "Digite um valor QUANTIDADE válido",
-	    	'precount.required' => " Preencha o campo PREÇO UNIDADE",
+	    	'precount.required' => "Preencha o campo PREÇO UNIDADE",
+	    	'precount.regex' => "Digite um valor PREÇO UNIDADE válido",
 	        'precobalde.required' => "Preencha o campo PREÇO BALDE",
-        	'tipo.required' => "Preencha o campo TIPO",
+            'precobalde.regex' => "Digite um valor PREÇO BALDE válido",
+            'tipo.required' => "Preencha o campo TIPO",
 	    	'tipo.max' => "Digite um valor TIPO válido",
 
 	    ];

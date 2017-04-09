@@ -22,13 +22,7 @@ class MenuController extends Controller
         return view('home')->with('users', $user);
 
     }
-    public function vendaview()
-    {
-        $user = Auth::user();
-        return view('venda')->with('users', $user);
 
-
-    }
     public function relatorioview()
     {
         $user = Auth::user();
