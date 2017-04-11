@@ -22,3 +22,4 @@ Route::get('cadastro','MenuController@cadastroview')->middleware('auth')->name('
 Route::get('relatorio','MenuController@relatorioview')->middleware('auth');
 Route::post('vcadastro','CadastroController@vcadastro')->middleware('auth');
 Route::get('venda','VendaController@vendas')->middleware('auth')->name('venda');
+Route::post('finalizado','VendaController@realiza')->middleware('auth');
