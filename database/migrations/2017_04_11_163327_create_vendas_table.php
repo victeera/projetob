@@ -12,12 +12,12 @@ class CreateVendasTable extends Migration
      */
     public function up()
     {
-        Schema::create('venda', function (Blueprint $table) {
+        Schema::create('vendas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('quantidade');
             $table->decimal('preco');
-            $table->timestamps();
+            $table->timestamps('d-m-Y H:i:s');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateVendasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('venda');
+        Schema::drop('vendas');
     }
 }

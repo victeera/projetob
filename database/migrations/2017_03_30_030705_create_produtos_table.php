@@ -19,7 +19,7 @@ class CreateProdutosTable extends Migration
             $table->decimal('precount');
             $table->decimal('precobalde');
             $table->string('tipo');
-            $table->timestamps();
+            $table->timestamps('d-m-Y H:i:s');
         });
     }
 

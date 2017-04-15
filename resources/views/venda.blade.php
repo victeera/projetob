@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
-   @include('head')
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet" type="text/css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <!-- Optional theme -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  </head>
+
    <title>Vendas</title>
 
+
+<body>
+   @include('head')
         <div class="container-fluid bg">
                 <p class="tipo2">Operador: {{ $users->name }}</p>
                 <p class=" tipo4">Venda</p>
@@ -32,7 +46,7 @@
     @endforeach
 @else
 
-<option selected value="">Não há produtos cadastrados</option>
+<option selected value="">Não há produtos em estoque</option>
 @endif
 </select>
 <br>

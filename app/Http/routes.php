@@ -23,3 +23,6 @@ Route::get('relatorio','MenuController@relatorioview')->middleware('auth');
 Route::post('vcadastro','CadastroController@vcadastro')->middleware('auth');
 Route::get('venda','VendaController@vendas')->middleware('auth')->name('venda');
 Route::post('finalizado','VendaController@realiza')->middleware('auth');
+Route::get('consulta.produto','ConsultaController@consultProd')->middleware('auth');
+Route::get('consulta.venda','ConsultaController@consultVenda')->middleware('auth');
+Route::get('relatorio','RelatorioController@relatorioPDF');

@@ -35,4 +35,9 @@ class MenuController extends Controller
         return view('login');
     }
 
+    public function consulta(){
+        $user = Auth::user();
+        return view('consulta')->with('users', $user);
+    }
+
 }

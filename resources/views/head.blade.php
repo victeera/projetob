@@ -1,13 +1,14 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
  <style>
-
 body{
     background:darkred !important;
     color: white !important;
+}
+.tb{
+    background-color: #f5f5f5;
+    color: black;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 15px;
+
 }
  .bg{
  background-color: darkred;
@@ -20,18 +21,19 @@ img{
 width: 30%;
 }
     .navbar {
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 14px;
+        padding-bottom: 14px;
         border: 0;
         border-radius: 0;
         margin-bottom: 0;
         font-size: 12px;
         font-family: 'Exo 2', sans-serif;
-        letter-spacing: 4px;
+        letter-spacing: 5px;
+
     }
 
     .navbar-nav li a:hover {
-        color: #ffffff !important;
+        color: darkred !important;
     }
 
     footer{
@@ -63,18 +65,14 @@ font-size: 40px;
  font-size: 80px;
 
  }
+ .date{
+text-align: right;
+font-family: 'Exo 2', sans-serif;
+font-size: 15px;
 
-
-
+ }
  </style>
 
-
-        <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-</head>
-<body>
 <nav class="navbar navbar-inverse" style="background-color: #000000; border-color: #000;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -91,8 +89,16 @@ font-size: 40px;
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href={{ url('cadastro') }}>Cadastrar Produto<span class="sr-only">(current)</span></a></li>
+        <li><a href={{ url('cadastro') }}>Cadastrar Produto<span class="sr-only"></span></a></li>
         <li><a href="{{ url('venda') }}">Venda</a></li>
+         <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultar<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{ url('consulta.produto') }}">Produtos Cadastrados</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="{{ url('consulta.venda') }}">Vendas Realizadas</a></li>
+                  </ul>
+                </li>
         <li><a href="{{ url('relatorio') }}">Relatório</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -102,3 +108,7 @@ font-size: 40px;
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
