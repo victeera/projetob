@@ -25,22 +25,23 @@
 <td>Produto</td>
 <td>Quantidade </td>
 <td>Valor</td>
-<td>Data de cadastro</td>
-<td>Data de alteração</td>
+<td>Tipo</td>
+<td>Data da venda</td>
 
 </tr>
         @foreach($vendas as $venda)
+
         @if($datacad = strtotime($venda->created_at))
-        @if($dataatt = strtotime($venda->updated_at))
+
 <tr>
 <td>{{ $venda->name }}</td>
 <td>{{ $venda->quantidade }}</td>
 <td> <?php $valor=str_replace(".",",", $venda->preco); echo ('R$ ' . $valor); ?></td>
-<td>{{ $datacr =  strftime("%A, %d de %B de %Y", $datacad) }}</td>
-<td>{{ $dataup = strftime("%A, %d de %B de %Y", $dataatt) }}</td>
-</tr>
+<td> {{$venda->tipo}}</td>
+<td>{{ $datacr =  date("d/m/Y | H:m:s", $datacad) }}</td>
 
-        @endif
+
+</tr>
         @endif
         @endforeach
 

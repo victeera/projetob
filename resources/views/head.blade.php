@@ -99,7 +99,18 @@ font-size: 15px;
                     <li><a href="{{ url('consulta.venda') }}">Vendas Realizadas</a></li>
                   </ul>
                 </li>
-        <li><a href="{{ url('relatorio') }}">Relatório</a></li>
+         <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatórios<span class="caret"></span></a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="{{ url('relatorio.produto') }}">Relatório de Produtos</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="{{ url('relatorio.venda') }}">Relatório de Vendas</a></li>
+                                  <li role="separator" class="divider"></li>
+                                    <li><a href="{{ url('relatorio.fechamento') }}">Finaalizar Noite</a></li>
+
+                                  </ul>
+                                </li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ url('login') }}"> Sair</a></li>

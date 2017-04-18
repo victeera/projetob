@@ -17,6 +17,7 @@ class CreateVendasTable extends Migration
             $table->string('name');
             $table->string('quantidade');
             $table->decimal('preco');
+            $table->string('tipo');
             $table->timestamps('d-m-Y H:i:s');
         });
     }

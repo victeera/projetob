@@ -44,25 +44,38 @@
         <option name="name" value="{{ $venda->name }}"> {{ $venda->name }}</option>
    @endif
     @endforeach
-@else
+ @else
 
 <option selected value="">Não há produtos em estoque</option>
 @endif
 </select>
 <br>
 
-
 <div class="form-group">
+          @if(Session::has('msg'))
+                {{ Session::get("msg") }}
+                @endif
              <div class="col-sm-14">
                <input type="text" class="form-control" name="quantidade" placeholder="Quantidade" value="{{ old('quantidade') }}">
              </div>
+</div>
+<select class="form-control" size="1" name="tipo">
+
+<option selected value="">Selecione o tipo</option>
+
+            <option name="tipo" value="Cerveja"> Cerveja</option>
+            <option name="tipo" value="Refrigerante"> Refrigerante</option>
+            <option name="tipo" value=Água"> Água</option>
+            <option name="tipo" value=Ice"> Ice</option>
+
+</select>
 <br>
                      <div class="form-group">
                      <div class="col-md-offset-5">
                     <button type="submit" class="btn btn-primary">Finalizar</button><br>
                     </div>
                     </div>
-</div>
+
 </div>
                 <div><img src="img/copo.png"></div>
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -50,43 +50,41 @@ font-size: 40px;
 
  }
 
+ .tipo5{
+ text-align: right;
+ font-family: 'Exo 2', sans-serif;
+ font-size: 20px;
+ }
+
  </style>
 <body>
 
        <div class="container-fluid bg">
+       <p class="tipo2">{{date("d/m/Y")}}</p>
         <p class=" tipo1"> Rabelo's Bar <img src="{{public_path('img/copo.png')}}"></p>
-        <p class="tipo3">Relátorio de produtos cadastrados </p>
+        <p class="tipo3">Relátorio de final de noite </p>
 
         <table class="table table-bordered tb">
         <tr>
-        <td>Produto</td>
-        <td>Quantidade </td>
-        <td>Preço Unidade</td>
-        <td>Preço Balde</td>
-        <td>Data de cadastro</td>
-        <td>Data de alteração</td>
+        <td>Quantidade de produtos vendidos</td>
+        <td>Valor das vendas</td>
+        <td>Valor garçom</td>
+        <td>Valor cantor</td>
+        <td>Valor auxiliar</td>
 
         </tr>
-                @foreach($produtos as $produto)
-                @if($datacad = strtotime($produto->created_at))
-                @if($dataatt = strtotime($produto->updated_at))
+
         <tr>
-        <td>{{ $produto->name }}</td>
-        <td>{{ $produto->quantidade }}</td>
-        <td> <?php $valor=str_replace(".",",", $produto->precount); echo ('R$ ' . $valor); ?></td>
-        <td> <?php $valor=str_replace(".",",", $produto->precobalde); echo ('R$ ' . $valor); ?></td>
-        <td>{{ $datacr =  strftime('%d/%B/%Y', $datacad) }}</td>
-        <td>{{ $dataup = strftime('%d/%B/%Y', $dataatt) }}</td>
-
+        <td>{{ $quantidadeC }}</td>
+        <td> <?php $total=str_replace(".",",", $valor); echo ('R$ ' . $total); ?></td>
+        <td>R$ 100,00</td>
+        <td>R$ 350,00</td>
+        <td>R$ 80,00</td>
         </tr>
-
-                @endif
-                @endif
-                @endforeach
-
         </table>
-
-
+        @if($liquido = $total - 350 - 100 - 80)
+                <p class="tipo5">Valor liquido R$ {{$liquido}}</p>
+                @endif
 </div>
 
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>

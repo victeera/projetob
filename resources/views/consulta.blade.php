@@ -29,8 +29,8 @@
 <td>Quantidade </td>
 <td>Preço da unidade</td>
 <td>Preço do balde</td>
-<td>Data de cadastro</td>
-<td>Data de alteração</td>
+<td>Data/Hora de cadastro</td>
+<td>Data/Hora de alteração</td>
 
 </tr>
         @foreach($produtos as $produto)
@@ -41,8 +41,8 @@
 <td>{{ $produto->quantidade }}</td>
 <td> <?php $valor=str_replace(".",",", $produto->precount); echo ('R$ ' . $valor); ?></td>
 <td><?php $valor=str_replace(".",",", $produto->precobalde); echo ('R$ ' . $valor); ?></td>
-<td>{{ $datacr =  strftime("%A, %d de %B de %Y", $datacad) }}</td>
-<td>{{ $dataup = strftime("%A, %d de %B de %Y", $dataatt) }}</td>
+<td>{{ $datacr =  date("d/m/Y | H:m:s", $datacad) }}</td>
+<td>{{ $dataup = date("d/m/Y | H:m:s", $dataatt) }}</td>
 </tr>
 
         @endif

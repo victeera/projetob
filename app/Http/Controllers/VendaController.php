@@ -28,13 +28,12 @@ class VendaController extends Controller
 
     public function realiza(Requests\VendaRequest $request)
     {
-        $consulta = Vendas::where('name', $request->get("name"))->get();
-        $aux = count($consulta);
         $consulta2 = Produtos::where('name', $request->get("name"))->get();
         $aux2 = count($consulta2);
             $venda = new Vendas();
             $venda->name = $request->get("name");
             $venda->quantidade = $request->get("quantidade");
+            $venda->tipo = $request->get("tipo");
             $venda->preco = $consulta2[0]->precount * $request->get("quantidade");
             $venda->save();
 
@@ -45,7 +44,8 @@ class VendaController extends Controller
                 $newqtd->save();
             }
         }
-        return redirect()->route('venda');
+        $msg = "Venda realizada";
+        return redirect()->route('venda', compact('msg'));
     }
 
 }
